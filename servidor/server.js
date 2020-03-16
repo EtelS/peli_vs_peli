@@ -1,5 +1,6 @@
 var express= require('express');
 var bodyParser= require('body-parser');
+var cors= require('cors');
 var buscadorController= require('./controller/controlador');
 var app= express();
 
@@ -8,16 +9,18 @@ const chalk = require('chalk');
 const success= chalk.bold.green;
 const error= chalk.bold.red;
 
+app.use(cors());
 app.use(bodyParser.urlencoded({
     extended:true
 }));
 app.use(bodyParser.json());
 
 app.get('/competencias', buscadorController.listarCompetencias );
+app.get('/competencias/:id', buscadorController.obtenerCompetencia);
 
 const host= '0.0.0.0'
 const port= '8080';
 
 app.listen(port, function(){
-    console.log(success(`Servidor activo en http://${host}:${port}`));
+    console.log(success(`Servidor activo en ${port}`));
 });
