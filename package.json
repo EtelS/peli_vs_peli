@@ -1,21 +1,28 @@
 {
-  "name": "peli-vs-peli",
+  "name": "peli_vs_peli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node servidor/server.js",
+    "start":"nodemon servidor/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EtelS/peli_vs_peli.git"
   },
   "author": "EtelS",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EtelS/peli_vs_peli/issues"
+  },
+  "homepage": "https://github.com/EtelS/peli_vs_peli#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "chalk": "^3.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "node": "^13.10.1",
     "nodemon": "^2.0.2"
   }
 }
