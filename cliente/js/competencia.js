@@ -83,11 +83,12 @@ function CompetenciasController () {
 		// Se obtienen de la api las opciones de películas
 		var opciones = $.getJSON(server+"/competencias/"+id+"/peliculas",
 	    function(data) {
-	    	// Se cargan las opciones en el DOM
+			// Se cargan las opciones en el DOM
 	    	self.cargarOpciones(id, data);
 	    });
 	},
 	this.cargarOpciones = function (id, opciones){
+		console.log('data en cargar opciones', opciones)
 		// Se carga el nombre de la competencia en el título de la página
 		$("#nombreCompetencia").text(opciones.competencia);
 		// Se recorren las opciones de películas (opciones.peliculas es un array) para votar que retornó la api
@@ -172,6 +173,7 @@ function CompetenciasController () {
 	    });
 	},
 	this.cargarResultados =  function (id, data){
+		console.log("cargar resultados front ", id, data);
 		// Se carga el nombre de la competencia en el contenedor del título
 		$("#nombreCompetencia").text(data.competencia);
 		// Se recorren los resultados (data es un array)

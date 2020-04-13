@@ -11,3 +11,8 @@ insert into competencias (nombre) values
 ('Qué drama te hizo llorar mas?'),
 ('Cuál es la peli más bizarra?'),
 ('Quién es el peor actor?');
+
+alter table competencias add column genero_id int(11) unsigned, add foreign key (genero_id) references genero(id);
+alter table competencias add column director_id int(11) unsigned, add foreign key (director_id) references director(id);
+alter table competencias add column actor_id int(11) unsigned, add foreign key (actor_id) references actor(id);
+
